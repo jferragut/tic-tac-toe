@@ -10,6 +10,7 @@ The idea of this project was to create a simple Tic-Tac-Toe game based on React 
 * **Webpack/NPM**
 
 <br>
+
 ## Layouts/Views:
 
 1. **Layout.jsx** - Main View that contains the layout and routes for the application.
@@ -23,20 +24,24 @@ The idea of this project was to create a simple Tic-Tac-Toe game based on React 
 3. **NewGame.jsx** - View that is allows the entery of player names and selection of first player (X or O).
 
 <br>
+
 ## Components:
 1. **NavBar.jsx** - for the purpose of this game, I went with a navbar element to handle the navigation and user interaction. Everything is route based and works with React Router.
 
 <br>
+
 ## Actions:
 1. **GameActions.js** - Contains the following functions
    * SetTurn - used to transmit the Player Names and first player that was selected to the store.
    * SendResult - used to submit the scores to API and send the resulting object to the Store.
 
 <br>
+
 ## Dispatchers:
 1. **gameDispatcher** - Not much to document. Functions as a dispatcher.
 
 <br>
+
 ## Stores:
 1. **gameStore.js** - The only game store used.
    * Holds model data for the initial selections - Player Names and First player selected
