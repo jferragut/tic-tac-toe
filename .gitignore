@@ -4,5 +4,8 @@ node_modules/
 #ignore the bundle files
 ./public/*
 
+#ignore the original example
+original/
+
 #don't ignore any gitkeep file
 !.gitkeep
