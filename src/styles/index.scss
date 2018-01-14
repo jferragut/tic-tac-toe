@@ -242,3 +242,19 @@ body {
     margin-left: 80%;
   }
 }
+
+
+.container.scoreboard{
+  position: relative;
+  left: 0;
+  top: 0;
+  transform: none;
+  text-align: center;
+  height: 700px;
+  overflow-y: scroll;
+  
+  th{
+    font-size:16px;
+    color: orange;
+  }
+}

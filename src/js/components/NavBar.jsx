@@ -21,6 +21,12 @@ export class Navbar extends React.Component {
                 url: '/new',
                 links: null
             },
+            {
+                id: Math.random(),
+                label: 'Scoreboard', 
+                url: '/scores',
+                links: null
+            },
         ]
     }
   }
@@ -62,9 +68,9 @@ export class Navbar extends React.Component {
     });
     
     return (<li key={navItemData.id} className="nav-item dropdown">
-              <a className="nav-link dropdown-toggle" href={navItemData.label} id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              <NavLink className="nav-link dropdown-toggle" to={navItemData.label} id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 {navItemData.label}
-              </a>
+              </NavLink>
               <div className="dropdown-menu" aria-labelledby="navbarDropdown">
                 {links}
               </div>
@@ -74,9 +80,9 @@ export class Navbar extends React.Component {
   renderLikeALink(navItemData){
     
     return (<li key={navItemData.id} className="nav-item">
-              <a className="nav-link" href={navItemData.url}>
+              <NavLink className="nav-link" to={navItemData.url}>
                 {navItemData.label}
-              </a>
+              </NavLink>
             </li>
             );
   }

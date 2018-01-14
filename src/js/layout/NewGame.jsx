@@ -15,6 +15,7 @@ export class NewGame extends React.Component {
     
     this.player1Name = null;
     this.player2Name = null;
+    
   }
   
    

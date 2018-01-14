@@ -1,8 +1,7 @@
 import React from 'react';
 import gameStore from '../stores/gameStore.js';
-import NewGame from './NewGame.jsx';
 
-import * as GameActions from '../actions/GameActions.js'
+import * as GameActions from '../actions/GameActions.js';
 
 export class TheBoard extends React.Component {
   
@@ -100,7 +99,7 @@ export class TheBoard extends React.Component {
       	   pyro: 'pyro'
       	});
       	console.log(this.checkWinnerName(),this.state.player1Name,this.state.player2Name);
-      	GameActions.SendResult(this.checkWinnerName(),this.state.player1Name,this.state.player2Name);
+      	GameActions.SendResult(this.state.winner,this.state.player1Name,this.state.player2Name);
     	}
     	
     	//if not, and X just played, then is O turn
@@ -125,7 +124,7 @@ export class TheBoard extends React.Component {
   
   checkWinnerName(){
     var player1Weapon = gameStore.currentPlayer;
-    if(player1Weapon==this.state.winner){
+    if(player1Weapon==this.state.turn){
       return this.state.player1Name;
     }else{
       return this.state.player2Name;

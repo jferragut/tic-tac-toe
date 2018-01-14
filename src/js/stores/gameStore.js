@@ -14,7 +14,7 @@ class GameStore extends EventEmmiter{
             player1Name: null,
             player2Name: null
         };
-        
+        this.scoreData = [];
     }
     
     
@@ -30,6 +30,10 @@ class GameStore extends EventEmmiter{
         return this.model.player2Name;
     }
     
+    getScore(){
+        return this.scoreData;
+    }
+    
     setPlayer(data){
         this.model=({
           currentPlayer: data.task,
@@ -39,11 +43,18 @@ class GameStore extends EventEmmiter{
         this.emit('change');
     }
     
+    saveScores(data){
+        this.scoreData = data;
+        console.log(data);
+        this.emit('change');
+    }
+    
     handleActions(action){
         console.log('We have received the action', action);
         switch(action.actionType)
         {
             case "SET_PLAYER": this.setPlayer(action.data); break;
+            case "SAVE_SCORES": this.saveScores(action.actionData); break;
         }
         
     }
